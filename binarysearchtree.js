@@ -9,4 +9,10 @@ class Tree {
     constructor() {
         this.root = null;
     }
+    processedArray(array) {
+        const uniqueArray = array.filter((item, index) => {
+            return array.indexOf(item) === index;
+        });
+        
+    }
 }
