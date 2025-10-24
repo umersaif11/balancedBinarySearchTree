@@ -6,14 +6,18 @@ class Node {
     }
 }
 class Tree {
-    constructor() {
+    constructor(array) {
+        const processed = this.processedArray(array);
+        
         this.root = null;
     }
     processedArray(array) {
         const uniqueArray = array.filter((item, index) => {
             return array.indexOf(item) === index;
         });
+
         uniqueArray.sort((a, b) => a - b);
+
         return uniqueArray;
     }
     buildTree(array, start, end) {
