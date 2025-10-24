@@ -13,6 +13,7 @@ class Tree {
         const uniqueArray = array.filter((item, index) => {
             return array.indexOf(item) === index;
         });
-        
+        uniqueArray.sort((a, b) => a - b);
+        return uniqueArray;
     }
 }
