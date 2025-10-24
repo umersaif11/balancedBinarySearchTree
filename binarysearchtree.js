@@ -27,6 +27,6 @@ class Tree {
 
         root.right = buildTree(array, mid + 1, end);
 
-        
+        return root;
     }
 }
