@@ -16,4 +16,7 @@ class Tree {
         uniqueArray.sort((a, b) => a - b);
         return uniqueArray;
     }
+    buildTree(array) {
+        
+    }
 }
