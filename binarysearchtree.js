@@ -23,9 +23,9 @@ class Tree {
 
         let root = new Node(array[mid]);
 
-       
+        root.left = buildTree(array, start, mid - 1);
 
-        
+        root.right = buildTree(array, mid + 1, end);
 
         
     }
