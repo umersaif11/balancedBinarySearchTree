@@ -52,6 +52,11 @@ class Tree {
         if(node === null) {
             return new Node(key);
         }
+        if(key < node.data) {
+            node.left = this.insert(node.left, key);
+        } else if(key > node.data) {
+            node.right = this.insert(node.right, key);
+        }
     }
 
 }
