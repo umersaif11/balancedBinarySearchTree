@@ -44,7 +44,13 @@ class Tree {
         if (node.left !== null) {
             this.prettyPrint(node.left, `${prefix}${isLeft ? '    ' : '│   '}`, true);
         }
-    };
+    }
+    treeRoot() {
+        return this.root;
+    }
+    insert(node = this.root, key) {
+        
+    }
 
 }
 const bst = new Tree([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]);
