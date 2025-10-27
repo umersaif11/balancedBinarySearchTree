@@ -8,8 +8,8 @@ class Node {
 class Tree {
     constructor(array) {
         const processed = this.processedArray(array);
-        
-        this.root = null;
+
+        this.root = this.buildTree(processed, 0, processed.length - 1);
     }
     processedArray(array) {
         const uniqueArray = array.filter((item, index) => {
@@ -27,10 +27,25 @@ class Tree {
 
         let root = new Node(array[mid]);
 
-        root.left = buildTree(array, start, mid - 1);
+        root.left = this.buildTree(array, start, mid - 1);
 
-        root.right = buildTree(array, mid + 1, end);
+        root.right = this.buildTree(array, mid + 1, end);
 
         return root;
     }
+    prettyPrint(node = this.root, prefix = '', isLeft = true) {
+        if (node === null) {
+            return;
+        }
+        if (node.right !== null) {
+            this.prettyPrint(node.right, `${prefix}${isLeft ? '│   ' : '    '}`, false);
+        }
+        console.log(`${prefix}${isLeft ? '└── ' : '┌── '}${node.data}`);
+        if (node.left !== null) {
+            this.prettyPrint(node.left, `${prefix}${isLeft ? '    ' : '│   '}`, true);
+        }
+    };
+
 }
+const bst = new Tree([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]);
+bst.prettyPrint();
