@@ -49,7 +49,9 @@ class Tree {
         return this.root;
     }
     insert(node = this.root, key) {
-        
+        if(node === null) {
+            return new Node(key);
+        }
     }
 
 }
