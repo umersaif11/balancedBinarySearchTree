@@ -48,7 +48,13 @@ class Tree {
     treeRoot() {
         return this.root;
     }
-    insert(node = this.root, key) {
+     /**
+     * Function to Insert Node in a Binary Search Tree
+     * @param {Node} node - The root node of the current subtree.
+     * @param {string} data - The character data to insert.
+     * @returns {Node} - The (potentially new) root of the subtree.
+     */
+    insert(node, key) {
         if(node === null) {
             return new Node(key);
         }
@@ -59,8 +65,12 @@ class Tree {
         } else {
             return;
         }
+        return node;
     }
 
 }
 const bst = new Tree([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]);
+const node = bst.buildTree()
+bst.prettyPrint();
+bst.insert(node,12);
 bst.prettyPrint();
