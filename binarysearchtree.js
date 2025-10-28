@@ -50,9 +50,9 @@ class Tree {
             return new Node(key);
         }
         if(key < node.data) {
-            node.left = this.insert(node.left, key);
+            node.left = this.#insert(node.left, key);
         } else if(key > node.data) {
-            node.right = this.insert(node.right, key);
+            node.right = this.#insert(node.right, key);
         } else {
             return;
         }
@@ -68,14 +68,14 @@ class Tree {
         }
         return current;
     }
-    deleteItem(node, key) {
+    #deleteItem(node, key) {
         if(node === null) {
             return node;
         }
         if(key < node.data) {
-            node.left = this.deleteItem(node.left, key);
+            node.left = this.#deleteItem(node.left, key);
         } else if(key > node.data) {
-            node.right = this.deleteItem(node.right, key);
+            node.right = this.#deleteItem(node.right, key);
         } else {
             if(node.left === null) {
                 return node.right;
@@ -85,9 +85,12 @@ class Tree {
             }
             const successorNode = this.getSuccessor(node);
             node.data = successorNode.data;
-            node.right = this.deleteItem(node.right, successorNode.data);
+            node.right = this.#deleteItem(node.right, successorNode.data);
         }
         return node;
+    }
+    deleteItem(key) {
+        this.root = this.#deleteItem(this.root, key);
     }
 }
 export { Tree }
