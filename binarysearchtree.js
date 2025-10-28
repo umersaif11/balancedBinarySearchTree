@@ -89,6 +89,8 @@ class Tree {
             if(node.right === null) {
                 return node.left;
             }
+            const successorNode = this.getSuccessor(node);
+            node.data = successorNode.data;
         }
     }
 }
