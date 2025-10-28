@@ -70,7 +70,7 @@ class Tree {
     getSuccessor(curr) {
         let current = curr.right;
         while(current !== null & current.left !== null) {
-            
+            current = current.left;
         }
     }
 }
