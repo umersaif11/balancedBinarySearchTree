@@ -96,8 +96,4 @@ class Tree {
         return node;
     }
 }
-const bst = new Tree([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]);
-const node = bst.buildTree()
-bst.prettyPrint();
-bst.insert(node,12);
-bst.prettyPrint();
+export { Tree }
