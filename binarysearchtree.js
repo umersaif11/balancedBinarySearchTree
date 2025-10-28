@@ -92,5 +92,10 @@ class Tree {
     deleteItem(key) {
         this.root = this.#deleteItem(this.root, key);
     }
+    #find(node, key) {
+        if(node === null) {
+            return node;
+        }
+    }
 }
 export { Tree }
