@@ -67,8 +67,11 @@ class Tree {
         }
         return node;
     }
-    getSuccessor(current) {
-        
+    getSuccessor(curr) {
+        let current = curr.right;
+        while(current !== null & current.left !== null) {
+            
+        }
     }
 }
 const bst = new Tree([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]);
