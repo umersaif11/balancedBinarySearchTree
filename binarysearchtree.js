@@ -107,5 +107,8 @@ class Tree {
     find(key) {
         return this.#find(this.root, key);
     }
+    #levelOrderForEach(root, callback) {
+
+    }
 }
 export { Tree }
