@@ -91,6 +91,7 @@ class Tree {
             }
             const successorNode = this.getSuccessor(node);
             node.data = successorNode.data;
+            node.right = this.deleteItem(node.right, successorNode.data);
         }
     }
 }
