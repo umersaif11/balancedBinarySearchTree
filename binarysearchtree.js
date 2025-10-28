@@ -76,7 +76,7 @@ class Tree {
     }
     deleteItem(node, key) {
         if(node === null) {
-            return node;
+            return node
         }
     }
 }
