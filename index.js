@@ -6,6 +6,7 @@ bst.insert(12);
 bst.prettyPrint();
 bst.deleteItem(67);
 bst.prettyPrint();
+console.log(bst.find(324));
 
 const bsttwo = new Tree([10, 5]);
 bsttwo.prettyPrint();
