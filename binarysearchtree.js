@@ -76,12 +76,19 @@ class Tree {
     }
     deleteItem(node, key) {
         if(node === null) {
-            return node
+            return node;
         }
         if(key < node.data) {
             node.left = this.deleteItem(node.left, key);
         } else if(key > node.data) {
             node.right = this.deleteItem(node.right, key);
+        } else {
+            if(node.left === null) {
+                return node.right;
+            }
+            if(node.right === null) {
+                return node.left;
+            }
         }
     }
 }
