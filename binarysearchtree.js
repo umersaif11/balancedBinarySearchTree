@@ -104,5 +104,8 @@ class Tree {
             return node;
         }
     }
+    find(key) {
+        return this.#find(this.root, key);
+    }
 }
 export { Tree }
