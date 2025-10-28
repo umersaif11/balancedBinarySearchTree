@@ -98,6 +98,10 @@ class Tree {
         }
         if(key < node.data) {
             return this.#find(node.left, key);
+        } else if(key > node.data) {
+            return this.#find(node.right, key);
+        } else {
+            return node;
         }
     }
 }
