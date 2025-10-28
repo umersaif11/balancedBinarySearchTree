@@ -93,6 +93,7 @@ class Tree {
             node.data = successorNode.data;
             node.right = this.deleteItem(node.right, successorNode.data);
         }
+        return node;
     }
 }
 const bst = new Tree([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]);
