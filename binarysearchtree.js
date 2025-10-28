@@ -72,6 +72,12 @@ class Tree {
         while(current !== null & current.left !== null) {
             current = current.left;
         }
+        return current;
+    }
+    deleteItem(node, key) {
+        if(node === null) {
+            return node;
+        }
     }
 }
 const bst = new Tree([1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]);
