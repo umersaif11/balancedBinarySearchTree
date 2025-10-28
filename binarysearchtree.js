@@ -45,16 +45,7 @@ class Tree {
             this.prettyPrint(node.left, `${prefix}${isLeft ? '    ' : '│   '}`, true);
         }
     }
-    treeRoot() {
-        return this.root;
-    }
-     /**
-     * Function to Insert Node in a Binary Search Tree
-     * @param {Node} node - The root node of the current subtree.
-     * @param {string} data - The character data to insert.
-     * @returns {Node} - The (potentially new) root of the subtree.
-     */
-    insert(node, key) {
+    #insert(node, key) {
         if(node === null) {
             return new Node(key);
         }
@@ -66,6 +57,9 @@ class Tree {
             return;
         }
         return node;
+    }
+    insert(key) {
+        this.root = this.#insert(this.root, key);
     }
     getSuccessor(curr) {
         let current = curr.right;
