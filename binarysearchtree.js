@@ -96,6 +96,9 @@ class Tree {
         if(node === null) {
             return node;
         }
+        if(key < node.data) {
+            return this.#find(node.left, key);
+        }
     }
 }
 export { Tree }
