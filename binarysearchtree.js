@@ -108,7 +108,9 @@ class Tree {
         return this.#find(this.root, key);
     }
     #levelOrderForEach(root, callback) {
-
+        if(typeof callback !== 'function') {
+            throw new Error("Callback is required!");
+        }
     }
 }
 export { Tree }
