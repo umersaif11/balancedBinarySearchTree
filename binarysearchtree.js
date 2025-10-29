@@ -128,5 +128,21 @@ class Tree {
     levelOrderForEach(callback) {
         this.#levelOrderForEach(this.root, callback);
     }
+    #levelOrderForEachRecursive(root, level, callback) {
+        if(typeof callback !== 'function'
+            || !callback) {
+            throw new Error("Callback is required!");
+        }
+        if(root === null) return;
+        let queue = [];
+        queue.push(root);
+        callback(root);
+
+        this.#levelOrderForEachRecursive(root.left, callback);
+        this.#levelOrderForEachRecursive(root.right, callback);
+    }
+    levelOrderForEachRecusrive(callback) {
+        this.#levelOrderForEachRecursive(this.root, callback);
+    }
 }
 export { Tree }
