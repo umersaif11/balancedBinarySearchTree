@@ -115,7 +115,8 @@ class Tree {
         if(root === null) return;
         let queue = [root];
         while(queue.length > 0) {
-            
+            let current = queue.shift();
+            callback(current);
         }
     }
 }
