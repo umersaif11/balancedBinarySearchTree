@@ -108,9 +108,12 @@ class Tree {
         return this.#find(this.root, key);
     }
     #levelOrderForEach(root, callback) {
-        if(typeof callback !== 'function') {
+        if(typeof callback !== 'function'
+            || !callback) {
             throw new Error("Callback is required!");
         }
+        if(root === null) return;
+        let queue = [root];
     }
 }
 export { Tree }
