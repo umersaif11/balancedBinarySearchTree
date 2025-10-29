@@ -125,5 +125,8 @@ class Tree {
             }
         }
     }
+    levelOrderForEach(callback) {
+        this.#levelOrderForEach(this.root, callback);
+    }
 }
 export { Tree }
