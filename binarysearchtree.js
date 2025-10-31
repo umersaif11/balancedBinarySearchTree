@@ -130,6 +130,16 @@ class Tree {
     }
     #levelOrderForEachRecursive(queue, callback) {
         if(queue.length === 0) return;
+        let current = queue.shift();
+        callback(current);
+        if(current.left != null) {
+            queue.push(current.left);
+        }
+        if(current.right != null) {
+            queue.push(current.right);
+        }
+        this.#levelOrderForEachRecursive(queue, callback);
+
     }
     levelOrderForEachRecusrive(callback) {
         if(typeof callback !== 'function'
