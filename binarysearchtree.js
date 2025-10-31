@@ -156,6 +156,9 @@ class Tree {
             throw new Error("Callback is required!");
         }
         if(root === null) return;
+        callback(root);
+        this.#preOrderForEach(root.left, callback);
+        this.#preOrderForEach(root.right, callback);
     }
 
 }
