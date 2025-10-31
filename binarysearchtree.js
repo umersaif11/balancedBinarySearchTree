@@ -150,15 +150,18 @@ class Tree {
         let queue = [this.root];
         this.#levelOrderForEachRecursive(queue, callback);
     }
-    #preOrderForEach(root, callback){
-        if(typeof callback !== 'function'
-            || !callback) {
-            throw new Error("Callback is required!");
-        }
+    #preOrderForEach(root, callback) {
         if(root === null) return;
         callback(root);
         this.#preOrderForEach(root.left, callback);
         this.#preOrderForEach(root.right, callback);
+    }
+    preOrderForEach(callback) {
+        if(typeof callback !== 'function'
+            || !callback) {
+            throw new Error("Callback is required!");
+        }
+        this.#preOrderForEach(this.root, callback);
     }
 
 }
