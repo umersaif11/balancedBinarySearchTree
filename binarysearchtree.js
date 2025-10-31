@@ -163,6 +163,32 @@ class Tree {
         }
         this.#preOrderForEach(this.root, callback);
     }
+    #inOrderForEach(root, callback) {
+        if(root === null) return;
+        this.#inOrderForEach(root.left, callback);
+        callback(root);
+        this.#inOrderForEach(root.right, callback);
+    }
+    inOrderForEach(callback) {
+        if(typeof callback !== 'function'
+            || !callback) {
+            throw new Error("Callback is required!");
+        }
+        this.#inOrderForEach(this.root, callback);
+    }
+    #postOrderForEach(root, callback) {
+        if(root === null) return;
+        this.#postOrderForEach(root.left, callback);
+        this.#postOrderForEach(root.right, callback);
+        callback(root);
+    }
+    postOrderForEach(callback) {
+        if(typeof callback !== 'function'
+            || !callback) {
+            throw new Error("Callback is required!");
+        }
+        this.#postOrderForEach(this.root, callback);
+    }
 
 }
 export { Tree }
