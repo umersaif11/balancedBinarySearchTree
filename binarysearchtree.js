@@ -146,8 +146,9 @@ class Tree {
             || !callback) {
             throw new Error("Callback is required!");
         }
-        if(root === null) return;
-       
+        if(this.root === null) return;
+        let queue = [this.root];
+        this.#levelOrderForEachRecursive(queue, callback);
     }
 
 }
