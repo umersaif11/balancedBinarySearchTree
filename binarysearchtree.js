@@ -194,7 +194,8 @@ class Tree {
         if(node === null) {
             return 0;
         }
-        
+        let left = this.height(node.left);
+        let right = this.height(node.right);
     }
 }
 export { Tree }
