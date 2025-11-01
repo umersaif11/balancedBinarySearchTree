@@ -214,6 +214,11 @@ class Tree {
             return 0;
         }
     }
-   
+    depth(value) {
+        if(!value || !this.find(value)) {
+            return 'Value not exist';
+        }
+       
+    }
 }
 export { Tree }
