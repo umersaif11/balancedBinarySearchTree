@@ -226,6 +226,10 @@ class Tree {
     #depth(root, value, counter) {
         if(root === null) return null;
         if(value === root.data) return counter;
+
+        if(value < root.data) {
+            return this.#depth(root.left, value, counter + 1);
+        }
     }
 }
 export { Tree }
