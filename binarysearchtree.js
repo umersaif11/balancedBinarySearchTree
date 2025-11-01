@@ -199,9 +199,15 @@ class Tree {
     }
     height(value) {
         let node = this.find(value);
-        if(value === null) return null;
+        if(node === null) return null;
         return this.#height(node);
     }
-    
+    #depth(root, value) {
+        if(root === null) {
+            return null;
+        }
+        
+    }
+   
 }
 export { Tree }
