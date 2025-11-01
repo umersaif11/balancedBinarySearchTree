@@ -198,7 +198,8 @@ class Tree {
         return Math.max(left, right) + 1;
     }
     height(value) {
-        
+        let node = this.find(value);
+        if(value === null) return null;
     }
     
 }
