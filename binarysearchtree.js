@@ -191,7 +191,7 @@ class Tree {
     }
     #height(node) {
         if(node === null) {
-            return 0;
+            return -1;
         }
         let left = this.#height(node.left);
         let right = this.#height(node.right);
@@ -200,6 +200,7 @@ class Tree {
     height(value) {
         let node = this.find(value);
         if(value === null) return null;
+        return this.#height(node);
     }
     
 }
