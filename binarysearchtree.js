@@ -196,6 +196,7 @@ class Tree {
         }
         let left = this.height(node.left);
         let right = this.height(node.right);
+        return Math.max(left, right) + 1;
     }
 }
 export { Tree }
