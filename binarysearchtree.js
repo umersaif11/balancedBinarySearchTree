@@ -189,14 +189,16 @@ class Tree {
         }
         this.#postOrderForEach(this.root, callback);
     }
-    height(value) {
-        let node = this.find(value);
+    #height(node) {
         if(node === null) {
             return 0;
         }
-        let left = this.height(node.left);
-        let right = this.height(node.right);
+        let left = this.#height(node.left);
+        let right = this.#height(node.right);
         return Math.max(left, right) + 1;
+    }
+    height(value) {
+        
     }
     
 }
