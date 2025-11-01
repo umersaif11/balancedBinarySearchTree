@@ -202,23 +202,30 @@ class Tree {
         if(node === null) return null;
         return this.#height(node);
     }
-    #depth(root, value) {
-        if(root === null) {
-            return null;
-        }
-        if(value < root.data) {
-            return this.#depth(root.left, value) + 1;
-        } else if(value > root.data) {
-            return this.#depth(root.right, value) + 1;
-        } else {
-            return 0;
-        }
-    }
-    depth(value) {
-        if(!value || !this.find(value)) {
-            return 'Value not exist';
-        }
-        return this.#depth(this.root, value);
+    //This depth function implementation works but function
+    //can be written more efficiently, see below comments
+
+    // #depth(root, value) {
+    //     if(root === null) {
+    //         return null;
+    //     }
+    //     if(value < root.data) {
+    //         return this.#depth(root.left, value) + 1;
+    //     } else if(value > root.data) {
+    //         return this.#depth(root.right, value) + 1;
+    //     } else {
+    //         return 0;
+    //     }
+    // }
+    // depth(value) {
+    //     if(!value || !this.find(value)) {
+    //         return 'Value not exist';
+    //     }
+    //     return this.#depth(this.root, value);
+    // }
+    #depth(root, value, counter) {
+        if(root === null) return null;
+        if(value === root.data) return counter;
     }
 }
 export { Tree }
