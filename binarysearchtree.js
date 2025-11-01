@@ -229,7 +229,13 @@ class Tree {
 
         if(value < root.data) {
             return this.#depth(root.left, value, counter + 1);
+        } else {
+            return this.#depth(root.right, value, counter + 1);
         }
+    }
+    depth(value) {
+        if(!value) return null;
+        return this.#depth(this.root, value, 0);
     }
 }
 export { Tree }
