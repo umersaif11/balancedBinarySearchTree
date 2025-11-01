@@ -191,9 +191,10 @@ class Tree {
     }
     height(value) {
         let node = this.find(value);
-        if(root === null) {
+        if(node === null) {
             return 0;
         }
+        
     }
 }
 export { Tree }
