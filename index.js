@@ -8,6 +8,7 @@ bst.deleteItem(67);
 bst.prettyPrint();
 console.log(bst.find(324));
 console.log(bst.height(8));
+console.log(bst.depth(23));
 
 // const bsttwo = new Tree([10, 5]);
 // bsttwo.prettyPrint();
