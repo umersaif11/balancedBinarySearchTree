@@ -218,7 +218,7 @@ class Tree {
         if(!value || !this.find(value)) {
             return 'Value not exist';
         }
-       
+        return this.#depth(this.root, value);
     }
 }
 export { Tree }
