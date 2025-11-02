@@ -234,7 +234,6 @@ class Tree {
         }
     }
     depth(value) {
-        if(!value) return null;
         return this.#depth(this.root, value, 0);
     }
     //Following solution of isbalanced is very inefficient
