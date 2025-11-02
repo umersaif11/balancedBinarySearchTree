@@ -267,7 +267,7 @@ class Tree {
         ) + 1;
     }
     isBalanced() {
-        return this.#isBalanced(this.root);
+        return this.#isBalanced(this.root) !== null;
     }
 }
 export { Tree }
