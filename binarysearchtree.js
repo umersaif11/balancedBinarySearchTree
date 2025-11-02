@@ -242,6 +242,10 @@ class Tree {
     //has time complexity of O(nlogn)
     isBalanced(root) {
         if(root === null) return true;
+        if(Math.abs(
+            this.height(root.left) -
+            this.height(root.right)
+        ) > 1) return false;
     }
 }
 export { Tree }
