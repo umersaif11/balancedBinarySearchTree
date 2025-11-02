@@ -271,6 +271,9 @@ class Tree {
     }
     rebalance() {
         if(this.isBalanced()) return;
+        let nodesArray = [];
+        
+        
     }
 }
 export { Tree }
