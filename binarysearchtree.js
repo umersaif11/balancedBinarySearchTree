@@ -252,9 +252,12 @@ class Tree {
     // }
     #isBalanced(root) {
         if(root === null) return -1;
-        leftHeight = this.#isBalanced(root.left);
-        rightHeight = this.#isBalanced(root.right);
+        let leftHeight = this.#isBalanced(root.left);
+        let rightHeight = this.#isBalanced(root.right);
 
+        if(leftHeight === null ||
+            rightHeight === null
+        ) return null;
         if(Math.abs(
             leftHeight - rightHeight
         ) > 1) return null;
@@ -262,6 +265,9 @@ class Tree {
         return Math.max(
             leftHeight, rightHeight
         ) + 1;
+    }
+    isBalanced() {
+        return this.#isBalanced(this.root);
     }
 }
 export { Tree }
