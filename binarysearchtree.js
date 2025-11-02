@@ -255,6 +255,9 @@ class Tree {
         leftHeight = this.#isBalanced(root.left);
         rightHeight = this.#isBalanced(root.right);
 
+        if(Math.abs(
+            leftHeight - rightHeight
+        ) > 1) return null;
 
         return Math.max(
             leftHeight, rightHeight
