@@ -240,14 +240,15 @@ class Tree {
     //Following solution of isbalanced is very inefficient
     //as it goes over same nodes again and again and so
     //has time complexity of O(nlogn)
-    isBalanced(root) {
-        if(root === null) return true;
-        if(Math.abs(
-            this.height(root.left) -
-            this.height(root.right)
-        ) > 1) return false;
-        return this.isBalanced(root.left) 
-            && this.isBalanced(root.right);
-    }
+    
+    // isBalanced(root) {
+    //     if(root === null) return true;
+    //     if(Math.abs(
+    //         this.height(root.left) -
+    //         this.height(root.right)
+    //     ) > 1) return false;
+    //     return this.isBalanced(root.left) 
+    //         && this.isBalanced(root.right);
+    // }
 }
 export { Tree }
