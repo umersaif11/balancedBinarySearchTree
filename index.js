@@ -9,6 +9,7 @@ bst.prettyPrint();
 console.log(bst.find(324));
 console.log(bst.height(8));
 console.log(bst.depth(23));
+console.log(bst.isBalanced());
 
 // const bsttwo = new Tree([10, 5]);
 // bsttwo.prettyPrint();
