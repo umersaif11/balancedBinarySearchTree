@@ -275,7 +275,7 @@ class Tree {
         this.inOrderForEach((node) => {
             nodesArray.push(node.data);
         });
-        
+        this.root = this.buildTree(nodesArray, 0, nodesArray.length - 1);
     }
 }
 export { Tree }
