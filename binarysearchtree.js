@@ -246,6 +246,8 @@ class Tree {
             this.height(root.left) -
             this.height(root.right)
         ) > 1) return false;
+        return this.isBalanced(root.left) 
+            && this.isBalanced(root.right);
     }
 }
 export { Tree }
