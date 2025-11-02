@@ -272,7 +272,9 @@ class Tree {
     rebalance() {
         if(this.isBalanced()) return;
         let nodesArray = [];
-        
+        this.inOrderForEach((node) => {
+            nodesArray.push(node.data);
+        });
         
     }
 }
