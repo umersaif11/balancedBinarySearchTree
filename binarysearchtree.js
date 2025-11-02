@@ -237,5 +237,11 @@ class Tree {
         if(!value) return null;
         return this.#depth(this.root, value, 0);
     }
+    //Following solution of isbalanced is very inefficient
+    //as it goes over same nodes again and again and so
+    //has time complexity of O(nlogn)
+    isBalanced(root) {
+        if(root === null) return true;
+    }
 }
 export { Tree }
